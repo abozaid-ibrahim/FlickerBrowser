@@ -8,10 +8,9 @@
 import Foundation
 
 final class Page {
-    var currentPage: Int = 1
-
-    var maxPages: Int = 5
-    var countPerPage: Int = 100
+    var currentPage = 1
+    var maxPages = 5
+    var countPerPage = 100
     var isFetchingData = false
     var fetchedItemsCount = 0
     var shouldLoadMore: Bool {
@@ -29,7 +28,6 @@ final class Page {
     }
 
     func newPage(fetched: Int, total: Int) {
-        isFetchingData = false
         currentPage += 1
         fetchedItemsCount += fetched
         maxPages = total

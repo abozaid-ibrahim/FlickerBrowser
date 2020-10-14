@@ -11,7 +11,7 @@
 		6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526525371F4D003A9BDF /* SceneDelegate.swift */; };
 		6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526925371F4E003A9BDF /* Assets.xcassets */; };
 		6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526E25371F4E003A9BDF /* LaunchScreen.storyboard */; };
-		6CDD527B25371F4E003A9BDF /* FlickerBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD527A25371F4E003A9BDF /* FlickerBrowserTests.swift */; };
+		6CDD527B25371F4E003A9BDF /* PhotosViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD527A25371F4E003A9BDF /* PhotosViewModelTests.swift */; };
 		6CDD529625371FE1003A9BDF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528725371FD4003A9BDF /* APIClient.swift */; };
 		6CDD529725371FE1003A9BDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528825371FD4003A9BDF /* APIConstants.swift */; };
 		6CDD529825371FE1003A9BDF /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528925371FD4003A9BDF /* RequestBuilder.swift */; };
@@ -58,7 +58,7 @@
 		6CDD526F25371F4E003A9BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CDD527125371F4E003A9BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CDD527625371F4E003A9BDF /* FlickerBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CDD527A25371F4E003A9BDF /* FlickerBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerBrowserTests.swift; sourceTree = "<group>"; };
+		6CDD527A25371F4E003A9BDF /* PhotosViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModelTests.swift; sourceTree = "<group>"; };
 		6CDD527C25371F4E003A9BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CDD528725371FD4003A9BDF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		6CDD528825371FD4003A9BDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		6CDD527925371F4E003A9BDF /* FlickerBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				6CDD527A25371F4E003A9BDF /* FlickerBrowserTests.swift */,
+				6CDD527A25371F4E003A9BDF /* PhotosViewModelTests.swift */,
 				6CDD527C25371F4E003A9BDF /* Info.plist */,
 			);
 			path = FlickerBrowserTests;
@@ -482,7 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CDD527B25371F4E003A9BDF /* FlickerBrowserTests.swift in Sources */,
+				6CDD527B25371F4E003A9BDF /* PhotosViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
