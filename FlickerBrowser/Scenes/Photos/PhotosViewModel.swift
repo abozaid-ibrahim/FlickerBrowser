@@ -35,7 +35,8 @@ final class PhotosViewModel: PhotosViewModelType {
     private let disposeBag = DisposeBag()
     private let apiClient: ApiClient
     private var page = Page()
-    private var searchText = "Apple" // Default search keyword
+    /// Default search keyword
+    private var searchText = "Apple"
     private(set) var reloadFields = PublishSubject<CollectionReload>()
 
     init(apiClient: ApiClient = HTTPClient()) {

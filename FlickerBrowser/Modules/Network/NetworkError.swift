@@ -20,7 +20,7 @@ enum NetworkError: LocalizedError {
         case .failedToParseData:
             return "Technical Difficults, we can't fetch the data"
         default:
-            return "Check your connectivity"
+            return "Check your connectivity, and try again."
         }
     }
 }

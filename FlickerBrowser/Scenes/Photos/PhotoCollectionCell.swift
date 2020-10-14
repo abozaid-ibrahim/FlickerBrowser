@@ -11,8 +11,8 @@ import UIKit
 final class PhotoCollectionCell: UICollectionViewCell {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
-
     private var imageLoader: Disposable?
+
     func setData(with session: Photo) {
         imageLoader = imageView.setImage(of: session)
         nameLabel.text = session.title
@@ -26,5 +26,6 @@ final class PhotoCollectionCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageLoader?.dispose()
+        imageView.image = nil
     }
 }

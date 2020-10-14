@@ -19,8 +19,4 @@ final class AppNavigator {
         window.rootViewController = AppNavigator.rootController
         window.makeKeyAndVisible()
     }
-
-    func push(_ dest: Destination) {
-        AppNavigator.rootController.pushViewController(dest.controller, animated: true)
-    }
 }
