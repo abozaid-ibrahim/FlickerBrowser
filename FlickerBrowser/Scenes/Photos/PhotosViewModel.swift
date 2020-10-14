@@ -60,19 +60,7 @@ final class PhotosViewModel: PhotosViewModelType {
         }
         page.isFetchingData = true
         isDataLoading.onNext(true)
-//        let api: Observable<PhotosResponse?> = apiClient.getData(of: PhotosAPI.search(""))
-//        let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
-//        api.subscribeOn(concurrentScheduler)
-//            .delay(DispatchTimeInterval.seconds(0), scheduler: concurrentScheduler)
-//            .subscribe(onNext: { [weak self] response in
-//                self?.updateUI(with: response?.pho.sessions ?? [])
-//            }, onError: { [weak self] err in
-//                self?.error.onNext(err.localizedDescription)
-//                self?.isDataLoading.onNext(false)
-//            }).disposed(by: disposeBag)
-//
-//
-        apiClient.getData(of: PhotosAPI.search("car")) { [weak self] result in
+        apiClient.getData(of: PhotosAPI.search("egypt")) { [weak self] result in
             switch result {
             case let .success(data):
                 if let response: PhotosResponse? = data.parse() {
@@ -112,22 +100,29 @@ private extension PhotosViewModel {
     }
 
     func bindForSearch() {
-//        searchFor.distinctUntilChanged()
-//            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-//            .subscribe(onNext: { [unowned self] text in
-//                self.isSearchLoading.onNext(true)
-//                let endpoint: Observable<AlbumsResponse?> = self.apiClient.getData(of: AlbumsApi.search(text))
-//                endpoint.subscribe(onNext: { [weak self] value in
-//                    guard let self = self else{return}
-//                    self.isSearchingMode = true
-//                    self.searchResultList = value?.data.sessions ?? []
-//                    self.reloadFields.onNext(.all)
-//                    self.isSearchLoading.onNext(false)
-//                }, onError: { [unowned self] err in
-//                    self.error.onNext(err.localizedDescription)
-//                    self.isSearchLoading.onNext(false)
-//                }).disposed(by: self.disposeBag)
-//            }).disposed(by: disposeBag)
+        searchFor.distinctUntilChanged()
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] text in
+                guard let self = self else { return }
+                self.isSearchingMode = true
+                self.isSearchLoading.onNext(true)
+                self.apiClient.getData(of: PhotosAPI.search(text)) { result in
+                    switch result {
+                    case let .success(data):
+                        if let response: PhotosResponse? = data.parse() {
+                            self.searchResultList = response?.photos?.photo ?? []
+                            self.reloadFields.onNext(.all)
+                        } else {
+                            self.error.onNext(NetworkError.failedToParseData.localizedDescription)
+                        }
+                        
+                    case let .failure(error):
+                        self.error.onNext(error.localizedDescription)
+                    }
+                    self.isSearchLoading.onNext(false)
+                    self.isDataLoading.onNext(false)
+                }
+            }).disposed(by: disposeBag)
     }
 
     func updatePage(with count: Int) {
