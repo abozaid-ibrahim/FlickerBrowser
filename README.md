@@ -49,4 +49,5 @@ This application uses the Model-View-ViewModel (refered to as MVVM) UI architect
 
 #### screen shots:
 
-![photos scene](https://github.com/abuzeid-ibrahim/FlickerBrowser/blob/master/FlickerBrowser/SupportingFiles/photos.png?raw=true)
+![Photos scene](https://github.com/abuzeid-ibrahim/FlickerBrowser/blob/master/FlickerBrowser/SupportingFiles/Screenshots/photos.png?raw=true)
+![No connection scene](https://github.com/abuzeid-ibrahim/FlickerBrowser/blob/master/FlickerBrowser/SupportingFiles/Screenshots/connectivity.png?raw=true)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C443A302537961C009FF10E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6C443A2F2537961B009FF10E /* README.md */; };
 		6C443A3225379D12009FF10E /* photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C443A3125379D12009FF10E /* photos.png */; };
+		6C443A3525379E10009FF10E /* connectivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C443A3425379E0F009FF10E /* connectivity.png */; };
 		6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526325371F4D003A9BDF /* AppDelegate.swift */; };
 		6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526525371F4D003A9BDF /* SceneDelegate.swift */; };
 		6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526925371F4E003A9BDF /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		569536FF9D1BC7D16FE59BBA /* Pods-FlickerBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C443A2F2537961B009FF10E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6C443A3125379D12009FF10E /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photos.png; sourceTree = "<group>"; };
+		6C443A3425379E0F009FF10E /* connectivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectivity.png; sourceTree = "<group>"; };
 		6CDD526025371F4D003A9BDF /* FlickerBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD526325371F4D003A9BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDD526525371F4D003A9BDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 		6C443A2C253774D8009FF10E /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				6C443A3125379D12009FF10E /* photos.png */,
+				6C443A3325379DF2009FF10E /* Screenshots */,
 				6CDD526325371F4D003A9BDF /* AppDelegate.swift */,
 				6CDD526525371F4D003A9BDF /* SceneDelegate.swift */,
 				6CDD526925371F4E003A9BDF /* Assets.xcassets */,
@@ -143,6 +145,15 @@
 				6CDD527125371F4E003A9BDF /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6C443A3325379DF2009FF10E /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				6C443A3425379E0F009FF10E /* connectivity.png */,
+				6C443A3125379D12009FF10E /* photos.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		6CDD525725371F4D003A9BDF = {
@@ -341,6 +352,7 @@
 			files = (
 				6C443A3225379D12009FF10E /* photos.png in Resources */,
 				6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */,
+				6C443A3525379E10009FF10E /* connectivity.png in Resources */,
 				6CDD52AE25372238003A9BDF /* PhotoCollectionCell.xib in Resources */,
 				6C443A302537961C009FF10E /* README.md in Resources */,
 				6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */,
