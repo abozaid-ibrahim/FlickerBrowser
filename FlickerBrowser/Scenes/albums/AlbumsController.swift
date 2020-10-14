@@ -58,7 +58,8 @@ private extension AlbumsController {
 
         viewModel.error
             .asDriver(onErrorJustReturn: "")
-            .drive(onNext: show(error:)).disposed(by: disposeBag)
+            .drive(onNext: show(error:))
+            .disposed(by: disposeBag)
         viewModel.loadData()
     }
 

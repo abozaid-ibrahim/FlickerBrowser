@@ -60,21 +60,35 @@ final class AlbumsViewModel: AlbumsViewModelType {
         }
         page.isFetchingData = true
         isDataLoading.onNext(true)
-//        let apiEndpoint = PhotosAPI.search.feed(page: page.currentPage, count: page.countPerPage)
-//        let api: Observable<AlbumsResponse?> = apiClient.getData(of: apiEndpoint)
+//        let api: Observable<PhotosResponse?> = apiClient.getData(of: PhotosAPI.search(""))
 //        let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
 //        api.subscribeOn(concurrentScheduler)
 //            .delay(DispatchTimeInterval.seconds(0), scheduler: concurrentScheduler)
 //            .subscribe(onNext: { [weak self] response in
-//                self?.updateUI(with: response?.data.sessions ?? [])
+//                self?.updateUI(with: response?.pho.sessions ?? [])
 //            }, onError: { [weak self] err in
 //                self?.error.onNext(err.localizedDescription)
 //                self?.isDataLoading.onNext(false)
 //            }).disposed(by: disposeBag)
+//
+//
+        apiClient.getData(of: PhotosAPI.search("car")) { [weak self] result in
+            switch result {
+            case let .success(data):
+                if let response: PhotosResponse? = data.parse() {
+                    self?.updateUI(with: response?.photos?.photo ?? [])
+                } else {
+                    self?.error.onNext(NetworkError.failedToParseData.localizedDescription)
+                }
+            case let .failure(error):
+                self?.error.onNext(error.localizedDescription)
+            }
+            self?.isDataLoading.onNext(false)
+        }
     }
 
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath]) {
-        guard let max = indexPaths.map({ $0.row }).max() , !isSearchingMode else { return }
+        guard let max = indexPaths.map({ $0.row }).max(), !isSearchingMode else { return }
         if page.fetchedItemsCount <= (max + 1) {
             prefetch ? loadData() : ()
         }

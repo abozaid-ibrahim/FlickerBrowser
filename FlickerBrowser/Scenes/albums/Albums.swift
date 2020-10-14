@@ -13,6 +13,7 @@ struct PhotosResponse: Codable {
 }
 
 // MARK: - Photos
+
 struct Photos: Codable {
     let page, pages, perpage: Int?
     let total: String?
@@ -20,9 +21,13 @@ struct Photos: Codable {
 }
 
 // MARK: - Photo
+
 struct Photo: Codable {
-    let id, owner, secret, server: String?
-    let farm: Int?
+    let id: String
+    let owner: String
+    let secret: String
+    let server: String
+    let farm: Int
     let title: String?
     let ispublic, isfriend, isfamily: Int?
 }
