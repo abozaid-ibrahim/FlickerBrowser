@@ -6,7 +6,6 @@
 //  Copyright © 2020 abuzeid. All rights reserved.
 //
 import Foundation
-import Foundation
 
 final class Page {
     var currentPage: Int = 1

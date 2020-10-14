@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxCocoa
 import RxSwift
 
 enum CollectionReload {
@@ -22,7 +23,7 @@ protocol PhotosViewModelType {
     var isSearchLoading: PublishSubject<Bool> { get }
     var reloadFields: PublishSubject<CollectionReload> { get }
     func searchCanceled()
-    func loadData()
+    func loadData(_ text: String?)
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath])
 }
 
@@ -34,10 +35,7 @@ final class PhotosViewModel: PhotosViewModelType {
     private let disposeBag = DisposeBag()
     private let apiClient: ApiClient
     private var page = Page()
-    private var isSearchingMode = false
-    private var sessionsList: [Photo] = []
-    private var searchResultList: [Photo] = []
-
+    private var searchText = "Tree" // Default search keyword
     private(set) var reloadFields = PublishSubject<CollectionReload>()
 
     init(apiClient: ApiClient = HTTPClient()) {
@@ -45,28 +43,25 @@ final class PhotosViewModel: PhotosViewModelType {
         bindForSearch()
     }
 
-    var dataList: [Photo] {
-        isSearchingMode ? searchResultList : sessionsList
-    }
+    var dataList: [Photo] = []
 
     func searchCanceled() {
-        isSearchingMode = false
         reloadFields.onNext(.all)
     }
 
-    func loadData() {
+    func loadData(_ text: String? = nil) {
         guard page.shouldLoadMore else {
             return
         }
         page.isFetchingData = true
         isDataLoading.onNext(true)
-        apiClient.getData(of: PhotosAPI.search(for: "egypt", page: page.currentPage)) { [weak self] result in
+        apiClient.getData(of: PhotosAPI.search(for: text ?? searchText, page: page.currentPage)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(data):
                 if let response: PhotosResponse? = data.parse() {
                     self.updateUI(with: response?.photos?.photo ?? [])
-                    self.updatePage(with: self.sessionsList.count, response?.photos?.pages ?? 0)
+                    self.updatePage(with: self.dataList.count, response?.photos?.pages ?? 0)
                 } else {
                     self.error.onNext(NetworkError.failedToParseData.localizedDescription)
                 }
@@ -78,7 +73,7 @@ final class PhotosViewModel: PhotosViewModelType {
     }
 
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath]) {
-        guard let max = indexPaths.map({ $0.row }).max(), !isSearchingMode else { return }
+        guard let max = indexPaths.map({ $0.row }).max() else { return }
         if page.fetchedItemsCount <= (max + 1) {
             prefetch ? loadData() : ()
         }
@@ -88,48 +83,40 @@ final class PhotosViewModel: PhotosViewModelType {
 // MARK: private
 
 private extension PhotosViewModel {
-    func updateUI(with sessions: [Photo]) {
+    func updateUI(with photos: [Photo]) {
         isDataLoading.onNext(false)
-        let startRange = sessionsList.count
-        sessionsList.append(contentsOf: sessions)
+        let startRange = dataList.count
+        dataList.append(contentsOf: photos)
         if page.isFirstPage {
             reloadFields.onNext(.all)
         } else {
-            let rows = (startRange ... sessionsList.count - 1).map { IndexPath(row: $0, section: 0) }
+            let rows = (startRange ... dataList.count - 1).map { IndexPath(row: $0, section: 0) }
             reloadFields.onNext(.insertIndexPaths(rows))
         }
     }
 
     func bindForSearch() {
         searchFor.distinctUntilChanged()
-            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(300), scheduler: SharingScheduler.make())
             .subscribe(onNext: { [weak self] text in
                 guard let self = self else { return }
-                self.isSearchingMode = true
-                self.isSearchLoading.onNext(true)
-                self.apiClient.getData(of: PhotosAPI.search(for: text, page: 0)) { result in
-                    switch result {
-                    case let .success(data):
-                        if let response: PhotosResponse? = data.parse() {
-                            self.searchResultList = response?.photos?.photo ?? []
-                            self.reloadFields.onNext(.all)
-                        } else {
-                            self.error.onNext(NetworkError.failedToParseData.localizedDescription)
-                        }
-
-                    case let .failure(error):
-                        self.error.onNext(error.localizedDescription)
-                    }
-                    self.isSearchLoading.onNext(false)
-                    self.isDataLoading.onNext(false)
-                }
+                self.reset()
+                self.loadData(text)
             }).disposed(by: disposeBag)
     }
 
     func updatePage(with count: Int, _ totalPages: Int) {
         page.isFetchingData = false
         page.currentPage += 1
-        page.fetchedItemsCount = count
+        page.fetchedItemsCount += count
         page.maxPages = totalPages
+    }
+
+    func reset() {
+        page.isFetchingData = false
+        page.currentPage = 1
+        page.fetchedItemsCount = 0
+        dataList.removeAll()
+        reloadFields.onNext(.all)
     }
 }

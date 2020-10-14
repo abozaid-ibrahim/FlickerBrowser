@@ -36,8 +36,6 @@ final class PhotosController: UICollectionViewController {
 // MARK: - setup
 
 private extension PhotosController {
-    
-
     func collection(reload: CollectionReload) {
         switch reload {
         case .all: collectionView.reloadData()
@@ -60,7 +58,7 @@ private extension PhotosController {
             .asDriver(onErrorJustReturn: "")
             .drive(onNext: show(error:))
             .disposed(by: disposeBag)
-        viewModel.loadData()
+        viewModel.loadData(nil)
     }
 
     func setupCollection() {

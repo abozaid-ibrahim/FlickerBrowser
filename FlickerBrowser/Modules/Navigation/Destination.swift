@@ -7,15 +7,14 @@
 
 import Foundation
 import UIKit
-typealias Contact = String
+
 enum Destination {
     case photos
-    
+
     var controller: UIViewController {
         switch self {
         case .photos:
             return PhotosController(viewModel: PhotosViewModel())
-       
         }
     }
 }
