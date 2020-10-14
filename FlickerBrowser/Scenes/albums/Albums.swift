@@ -7,35 +7,22 @@
 //
 
 import Foundation
-
-struct AlbumsResponse: Codable {
-    let data: DataClass
+struct PhotosResponse: Codable {
+    let photos: Photos?
+    let stat: String?
 }
 
-struct DataClass: Codable {
-    let sessions: [Session]
+// MARK: - Photos
+struct Photos: Codable {
+    let page, pages, perpage: Int?
+    let total: String?
+    let photo: [Photo]?
 }
 
-struct Session: Codable {
-    let name: String
-    let listenerCount: Int
-    let genres: [String]
-    let currentTrack: CurrentTrack
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case listenerCount = "listener_count"
-        case genres
-        case currentTrack = "current_track"
-    }
-}
-
-struct CurrentTrack: Codable {
-    let title: String
-    let artworkURL: String
-
-    enum CodingKeys: String, CodingKey {
-        case title
-        case artworkURL = "artwork_url"
-    }
+// MARK: - Photo
+struct Photo: Codable {
+    let id, owner, secret, server: String?
+    let farm: Int?
+    let title: String?
+    let ispublic, isfriend, isfamily: Int?
 }

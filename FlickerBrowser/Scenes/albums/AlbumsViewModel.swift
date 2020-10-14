@@ -15,7 +15,7 @@ enum CollectionReload {
 }
 
 protocol AlbumsViewModelType {
-    var dataList: [Session] { get }
+    var dataList: [Photo] { get }
     var error: PublishSubject<String> { get }
     var searchFor: PublishSubject<String> { get }
     var isDataLoading: PublishSubject<Bool> { get }
@@ -35,8 +35,8 @@ final class AlbumsViewModel: AlbumsViewModelType {
     private let apiClient: ApiClient
     private var page = Page()
     private var isSearchingMode = false
-    private var sessionsList: [Session] = []
-    private var searchResultList: [Session] = []
+    private var sessionsList: [Photo] = []
+    private var searchResultList: [Photo] = []
 
     private(set) var reloadFields = PublishSubject<CollectionReload>()
 
@@ -45,7 +45,7 @@ final class AlbumsViewModel: AlbumsViewModelType {
         bindForSearch()
     }
 
-    var dataList: [Session] {
+    var dataList: [Photo] {
         isSearchingMode ? searchResultList : sessionsList
     }
 
@@ -84,7 +84,7 @@ final class AlbumsViewModel: AlbumsViewModelType {
 // MARK: private
 
 private extension AlbumsViewModel {
-    func updateUI(with sessions: [Session]) {
+    func updateUI(with sessions: [Photo]) {
         isDataLoading.onNext(false)
         let startRange = sessionsList.count
         sessionsList.append(contentsOf: sessions)

@@ -14,11 +14,11 @@ final class AlbumCollectionCell: UICollectionViewCell {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var genresLabel: UILabel!
     private var imageLoader: Disposable?
-    func setData(with session: Session) {
-        imageLoader = imageView.setImage(with: session.currentTrack.artworkURL)
-        nameLabel.text = session.name
-        titleLabel.text = session.currentTrack.title
-        genresLabel.text = String(session.genres.count)
+    func setData(with session: Photo) {
+//        imageLoader = imageView.setImage(with: session.)
+//        nameLabel.text = session.name
+//        titleLabel.text = session.currentTrack.title
+//        genresLabel.text = String(session.genres.count)
     }
 
     override func awakeFromNib() {

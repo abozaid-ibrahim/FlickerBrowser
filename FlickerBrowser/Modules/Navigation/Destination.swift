@@ -9,14 +9,13 @@ import Foundation
 import UIKit
 typealias Contact = String
 enum Destination {
-    case contactsList
-    case contactDetails(of: Contact?)
+    case photos
+    
     var controller: UIViewController {
         switch self {
-        case .contactsList:
-            return UIViewController()
-        case let .contactDetails(contact):
-           return UIViewController()
+        case .photos:
+            return AlbumsController(viewModel: AlbumsViewModel())
+       
         }
     }
 }

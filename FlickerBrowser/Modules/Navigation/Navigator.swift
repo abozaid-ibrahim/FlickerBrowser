@@ -10,28 +10,17 @@ import UIKit
 
 final class AppNavigator {
     static let shared = AppNavigator()
-    private static var homeNavigationController: UINavigationController!
+    private static var rootController: UINavigationController!
 
     private init() {}
 
     func set(window: UIWindow) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            let splitViewController = UISplitViewController()
-            let masterNavigationController = UINavigationController(rootViewController: Destination.contactsList.controller)
-            let detailsNavigationController = UINavigationController(rootViewController: Destination.contactDetails(of: nil).controller)
-            splitViewController.viewControllers = [masterNavigationController, detailsNavigationController]
-            splitViewController.preferredDisplayMode = .allVisible
-            AppNavigator.homeNavigationController = masterNavigationController
-            window.rootViewController = splitViewController
-
-        } else {
-            AppNavigator.homeNavigationController = UINavigationController(rootViewController: Destination.contactsList.controller)
-            window.rootViewController = AppNavigator.homeNavigationController
-        }
+        AppNavigator.rootController = UINavigationController(rootViewController: Destination.photos.controller)
+        window.rootViewController = AppNavigator.rootController
         window.makeKeyAndVisible()
     }
 
     func push(_ dest: Destination) {
-        AppNavigator.homeNavigationController.pushViewController(dest.controller, animated: true)
+        AppNavigator.rootController.pushViewController(dest.controller, animated: true)
     }
 }

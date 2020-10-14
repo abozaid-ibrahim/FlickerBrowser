@@ -13,7 +13,7 @@ import UIKit
 final class AlbumsController: UICollectionViewController {
     private let viewModel: AlbumsViewModelType
     private let disposeBag = DisposeBag()
-    private var albums: [Session] { viewModel.dataList }
+    private var albums: [Photo] { viewModel.dataList }
 
     init(viewModel: AlbumsViewModelType) {
         self.viewModel = viewModel
