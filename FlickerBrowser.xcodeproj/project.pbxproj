@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C443A302537961C009FF10E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6C443A2F2537961B009FF10E /* README.md */; };
 		6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526325371F4D003A9BDF /* AppDelegate.swift */; };
 		6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526525371F4D003A9BDF /* SceneDelegate.swift */; };
 		6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526925371F4E003A9BDF /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		25D0F2414B0BF02E6E148802 /* Pods-FlickerBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowser.debug.xcconfig"; path = "Target Support Files/Pods-FlickerBrowser/Pods-FlickerBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		569536FF9D1BC7D16FE59BBA /* Pods-FlickerBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C443A2F2537961B009FF10E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6CDD526025371F4D003A9BDF /* FlickerBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD526325371F4D003A9BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDD526525371F4D003A9BDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		6CDD525725371F4D003A9BDF = {
 			isa = PBXGroup;
 			children = (
+				6C443A2F2537961B009FF10E /* README.md */,
 				6CDD526225371F4D003A9BDF /* FlickerBrowser */,
 				6CDD527925371F4E003A9BDF /* FlickerBrowserTests */,
 				6CDD526125371F4D003A9BDF /* Products */,
@@ -335,6 +338,7 @@
 			files = (
 				6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */,
 				6CDD52AE25372238003A9BDF /* PhotoCollectionCell.xib in Resources */,
+				6C443A302537961C009FF10E /* README.md in Resources */,
 				6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +636,7 @@
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlickerBrowser/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,6 +658,7 @@
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlickerBrowser/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

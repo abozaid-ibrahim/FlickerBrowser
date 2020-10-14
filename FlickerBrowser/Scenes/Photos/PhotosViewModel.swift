@@ -50,7 +50,6 @@ final class PhotosViewModel: PhotosViewModelType {
     }
 
     func loadData(for text: String? = nil) {
-        print(">>>page:\(page.currentPage) t: \(page.maxPages) , c: \(page.fetchedItemsCount)")
         guard page.shouldLoadMore else {
             return
         }
@@ -77,7 +76,6 @@ final class PhotosViewModel: PhotosViewModelType {
 
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath]) {
         guard let max = indexPaths.map({ $0.row }).max() else { return }
-        print(">>>max:\(max), f\(page.fetchedItemsCount)")
         if page.fetchedItemsCount <= (max + 1) {
             prefetch ? loadData() : ()
         }
