@@ -23,55 +23,54 @@ final class FlickerBrowserTests: XCTestCase {
         disposeBag = nil
     }
 
-//    func testLoadingFromAPIClient() throws {
-//    let         viewModel = PhotosViewModel(apiClient: MockedSuccessAPIClient())
+    func testLoadingFromAPIClient() throws {
+        let viewModel = PhotosViewModel(apiClient: MockedSuccessAPIClient())
 
-//        let schedular = TestScheduler(initialClock: 0)
-//        let reloadObserver = schedular.createObserver(CollectionReload.self)
-//        viewModel.reloadFields.bind(to: reloadObserver).disposed(by: disposeBag)
-//
-//        schedular.scheduleAt(0, action: { self.viewModel.loadData(for: "Car") })
-//        schedular.start()
-//
-//        XCTAssertEqual(reloadObserver.events, [.next(0, .all)])
-//        XCTAssertEqual(viewModel.dataList.count, 3)
-//    }
+        let schedular = TestScheduler(initialClock: 0)
+        let reloadObserver = schedular.createObserver(CollectionReload.self)
+        viewModel.reloadFields.bind(to: reloadObserver).disposed(by: disposeBag)
+
+        schedular.scheduleAt(0, action: { viewModel.loadData(for: "Car") })
+        schedular.start()
+
+        XCTAssertEqual(reloadObserver.events, [.next(0, .all)])
+        XCTAssertEqual(viewModel.dataList.count, 3)
+    }
 
     func testLoadingMultiplePages() throws {
         let schedular = TestScheduler(initialClock: 0, resolution: 0.001)
-//        SharingScheduler.mock(scheduler: schedular) {
+        SharingScheduler.mock(scheduler: schedular) {
             let viewModel = PhotosViewModel(apiClient: MockedSuccessAPIClient())
             let reloadObserver = schedular.createObserver(CollectionReload.self)
             viewModel.reloadFields.bind(to: reloadObserver).disposed(by: disposeBag)
-            
-        schedular.scheduleAt(0, action: { viewModel.searchFor.onNext("Cat") })
+            func prefetch(row: Int) {
+                viewModel.prefetchItemsAt(prefetch: true, indexPaths: [.init(row: row, section: 0)])
+            }
+            schedular.scheduleAt(0, action: { viewModel.searchFor.onNext("cat") })
             schedular.scheduleAt(400, action: { prefetch(row: 2) })
             schedular.scheduleAt(500, action: { prefetch(row: 5) })
-            schedular.scheduleAt(600, action: { prefetch(row: 5) })
             let secondPage = [3, 4, 5].map { IndexPath(row: $0, section: 0) }
             let thirdPage = [6, 7, 8].map { IndexPath(row: $0, section: 0) }
             schedular.start()
 
             XCTAssertEqual(reloadObserver.events, [.next(300, .all),
+                                                   .next(300, .all),
                                                    .next(400, .insertIndexPaths(secondPage)),
                                                    .next(500, .insertIndexPaths(thirdPage))])
-            func prefetch(row: Int) {
-                viewModel.prefetchItemsAt(prefetch: true, indexPaths: [.init(row: row, section: 0)])
-            }
-//        }
+        }
     }
 
-//    func testAPIFailure() throws {
-//        let schedular = TestScheduler(initialClock: 0)
-//        let errorObserver = schedular.createObserver(String.self)
-//        let viewModel = PhotosViewModel(apiClient: MockedFailureApi())
-//        viewModel.error.bind(to: errorObserver).disposed(by: disposeBag)
-//
-//        schedular.scheduleAt(1, action: { viewModel.loadData() })
-//        schedular.start()
-//
-//        XCTAssertEqual(errorObserver.events, [.next(1, NetworkError.failedToParseData.localizedDescription)])
-//    }
+    func testAPIFailure() throws {
+        let schedular = TestScheduler(initialClock: 0)
+        let errorObserver = schedular.createObserver(String.self)
+        let viewModel = PhotosViewModel(apiClient: MockedFailureApi())
+        viewModel.error.bind(to: errorObserver).disposed(by: disposeBag)
+
+        schedular.scheduleAt(1, action: { viewModel.loadData() })
+        schedular.start()
+
+        XCTAssertEqual(errorObserver.events, [.next(1, NetworkError.failedToParseData.localizedDescription)])
+    }
 }
 
 final class MockedFailureApi: ApiClient {

@@ -50,6 +50,7 @@ final class PhotosViewModel: PhotosViewModelType {
     }
 
     func loadData(for text: String? = nil) {
+        print(">>>page:\(page.currentPage) t: \(page.maxPages) , c: \(page.fetchedItemsCount)")
         guard page.shouldLoadMore else {
             return
         }
@@ -60,20 +61,23 @@ final class PhotosViewModel: PhotosViewModelType {
             switch result {
             case let .success(data):
                 if let response: PhotosResponse? = data.parse() {
-                    self.updateUI(with: response?.photos?.photo ?? [])
-                    self.page.newPage(fetched: self.dataList.count, total: response?.photos?.pages ?? 0)
+                    let photos = response?.photos?.photo ?? []
+                    self.updateUI(with: photos)
+                    self.page.newPage(fetched: photos.count, total: response?.photos?.pages ?? 0)
                 } else {
                     self.error.onNext(NetworkError.failedToParseData.localizedDescription)
                 }
             case let .failure(error):
                 self.error.onNext(error.localizedDescription)
             }
+            self.page.isFetchingData = false
             self.isDataLoading.onNext(false)
         }
     }
 
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath]) {
         guard let max = indexPaths.map({ $0.row }).max() else { return }
+        print(">>>max:\(max), f\(page.fetchedItemsCount)")
         if page.fetchedItemsCount <= (max + 1) {
             prefetch ? loadData() : ()
         }
