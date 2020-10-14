@@ -49,4 +49,4 @@ This application uses the Model-View-ViewModel (refered to as MVVM) UI architect
 
 #### photos scene:
 
-![alt text](https://github.com/abuzeid-ibrahim/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/abuzeid-ibrahim/FlickerBrowser/blob/master/image.jpg?raw=true)
