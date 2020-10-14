@@ -27,9 +27,9 @@ final class Page {
         fetchedItemsCount = 0
     }
 
-    func newPage(fetched: Int, total: Int) {
+    func newPage(fetched: Int, total: Int?) {
         currentPage += 1
         fetchedItemsCount += fetched
-        maxPages = total
+        maxPages = total ?? maxPages
     }
 }

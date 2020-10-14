@@ -47,6 +47,6 @@ This application uses the Model-View-ViewModel (refered to as MVVM) UI architect
 ### Scenes
 - Group of app scenes.
 
-#### photos scene:
+#### screen shots:
 
-![alt text](https://github.com/abuzeid-ibrahim/FlickerBrowser/blob/master/image.jpg?raw=true)
+![photos scene](https://github.com/abuzeid-ibrahim/FlickerBrowser/blob/master/image.jpg?raw=true)

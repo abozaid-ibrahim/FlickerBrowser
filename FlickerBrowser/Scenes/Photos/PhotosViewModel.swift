@@ -35,7 +35,7 @@ final class PhotosViewModel: PhotosViewModelType {
     private let disposeBag = DisposeBag()
     private let apiClient: ApiClient
     private var page = Page()
-    private var searchText = "Tree" // Default search keyword
+    private var searchText = "Apple" // Default search keyword
     private(set) var reloadFields = PublishSubject<CollectionReload>()
 
     init(apiClient: ApiClient = HTTPClient()) {
@@ -62,7 +62,7 @@ final class PhotosViewModel: PhotosViewModelType {
                 if let response: PhotosResponse? = data.parse() {
                     let photos = response?.photos?.photo ?? []
                     self.updateUI(with: photos)
-                    self.page.newPage(fetched: photos.count, total: response?.photos?.pages ?? 0)
+                    self.page.newPage(fetched: photos.count, total: response?.photos?.pages)
                 } else {
                     self.error.onNext(NetworkError.failedToParseData.localizedDescription)
                 }

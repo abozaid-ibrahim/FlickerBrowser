@@ -41,7 +41,6 @@ extension UIImageView {
     @discardableResult
     func setImage(of photo:Photo) -> Disposable? {
         guard let url = URL(string: "http://farm\(photo.farm).static.flickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg") else { return nil }
-        print(url.absoluteString)
         return ImageDownloader().downloadImageWith(url: url, completion: { [weak self] image in
             DispatchQueue.main.async {
                 self?.image = image
