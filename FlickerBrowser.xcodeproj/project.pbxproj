@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526325371F4D003A9BDF /* AppDelegate.swift */; };
 		6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526525371F4D003A9BDF /* SceneDelegate.swift */; };
-		6CDD526825371F4D003A9BDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526725371F4D003A9BDF /* ContentView.swift */; };
 		6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526925371F4E003A9BDF /* Assets.xcassets */; };
-		6CDD526D25371F4E003A9BDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526C25371F4E003A9BDF /* Preview Assets.xcassets */; };
 		6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526E25371F4E003A9BDF /* LaunchScreen.storyboard */; };
 		6CDD527B25371F4E003A9BDF /* FlickerBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD527A25371F4E003A9BDF /* FlickerBrowserTests.swift */; };
 		6CDD529625371FE1003A9BDF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528725371FD4003A9BDF /* APIClient.swift */; };
@@ -24,9 +22,7 @@
 		6CDD529D25371FE8003A9BDF /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528F25371FD4003A9BDF /* Destination.swift */; };
 		6CDD529E25371FE8003A9BDF /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529025371FD4003A9BDF /* Navigator.swift */; };
 		6CDD529F25371FF1003A9BDF /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529225371FD4003A9BDF /* UIView+Layer.swift */; };
-		6CDD52A025371FF1003A9BDF /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */; };
 		6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */; };
-		6CDD52A225371FF1003A9BDF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529525371FD4003A9BDF /* Observable.swift */; };
 		6CDD52AD25372238003A9BDF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52A42537222D003A9BDF /* Strings.swift */; };
 		6CDD52AE25372238003A9BDF /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD52A52537222D003A9BDF /* PhotoCollectionCell.xib */; };
 		6CDD52AF25372238003A9BDF /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52A62537222D003A9BDF /* PhotoCollectionCell.swift */; };
@@ -58,9 +54,7 @@
 		6CDD526025371F4D003A9BDF /* FlickerBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD526325371F4D003A9BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDD526525371F4D003A9BDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6CDD526725371F4D003A9BDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6CDD526925371F4E003A9BDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6CDD526C25371F4E003A9BDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6CDD526F25371F4E003A9BDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CDD527125371F4E003A9BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CDD527625371F4E003A9BDF /* FlickerBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,9 +70,7 @@
 		6CDD528F25371FD4003A9BDF /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		6CDD529025371FD4003A9BDF /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		6CDD529225371FD4003A9BDF /* UIView+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layer.swift"; sourceTree = "<group>"; };
-		6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
-		6CDD529525371FD4003A9BDF /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		6CDD52A42537222D003A9BDF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		6CDD52A52537222D003A9BDF /* PhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionCell.xib; sourceTree = "<group>"; };
 		6CDD52A62537222D003A9BDF /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
@@ -136,6 +128,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6C443A2C253774D8009FF10E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD526325371F4D003A9BDF /* AppDelegate.swift */,
+				6CDD526525371F4D003A9BDF /* SceneDelegate.swift */,
+				6CDD526925371F4E003A9BDF /* Assets.xcassets */,
+				6CDD526E25371F4E003A9BDF /* LaunchScreen.storyboard */,
+				6CDD527125371F4E003A9BDF /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		6CDD525725371F4D003A9BDF = {
 			isa = PBXGroup;
 			children = (
@@ -161,23 +165,9 @@
 			children = (
 				6CDD52B6253723F4003A9BDF /* Scenes */,
 				6CDD528525371FD4003A9BDF /* Modules */,
-				6CDD526325371F4D003A9BDF /* AppDelegate.swift */,
-				6CDD526525371F4D003A9BDF /* SceneDelegate.swift */,
-				6CDD526725371F4D003A9BDF /* ContentView.swift */,
-				6CDD526925371F4E003A9BDF /* Assets.xcassets */,
-				6CDD526E25371F4E003A9BDF /* LaunchScreen.storyboard */,
-				6CDD527125371F4E003A9BDF /* Info.plist */,
-				6CDD526B25371F4E003A9BDF /* Preview Content */,
+				6C443A2C253774D8009FF10E /* SupportingFiles */,
 			);
 			path = FlickerBrowser;
-			sourceTree = "<group>";
-		};
-		6CDD526B25371F4E003A9BDF /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				6CDD526C25371F4E003A9BDF /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		6CDD527925371F4E003A9BDF /* FlickerBrowserTests */ = {
@@ -229,9 +219,7 @@
 				6CDD52B8253725BB003A9BDF /* UICollectionView+Cell.swift */,
 				6CDD52B7253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift */,
 				6CDD529225371FD4003A9BDF /* UIView+Layer.swift */,
-				6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */,
 				6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */,
-				6CDD529525371FD4003A9BDF /* Observable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,14 +227,14 @@
 		6CDD52A32537222D003A9BDF /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				6CDD52A42537222D003A9BDF /* Strings.swift */,
-				6CDD52A52537222D003A9BDF /* PhotoCollectionCell.xib */,
-				6CDD52A62537222D003A9BDF /* PhotoCollectionCell.swift */,
-				6CDD52A82537222D003A9BDF /* PhotoApi.swift */,
-				6CDD52A92537222D003A9BDF /* ActivityIndicatorFooterView.swift */,
 				6CDD52AA2537222D003A9BDF /* PhotosController.swift */,
 				6CDD52AB2537222D003A9BDF /* PhotosViewModel.swift */,
 				6CDD52AC2537222D003A9BDF /* Photo.swift */,
+				6CDD52A82537222D003A9BDF /* PhotoApi.swift */,
+				6CDD52A52537222D003A9BDF /* PhotoCollectionCell.xib */,
+				6CDD52A62537222D003A9BDF /* PhotoCollectionCell.swift */,
+				6CDD52A92537222D003A9BDF /* ActivityIndicatorFooterView.swift */,
+				6CDD52A42537222D003A9BDF /* Strings.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -347,7 +335,6 @@
 			files = (
 				6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */,
 				6CDD52AE25372238003A9BDF /* PhotoCollectionCell.xib in Resources */,
-				6CDD526D25371F4E003A9BDF /* Preview Assets.xcassets in Resources */,
 				6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,7 +453,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDD52B125372238003A9BDF /* PhotoApi.swift in Sources */,
-				6CDD52A225371FF1003A9BDF /* Observable.swift in Sources */,
 				6CDD52B225372238003A9BDF /* ActivityIndicatorFooterView.swift in Sources */,
 				6CDD52B525372238003A9BDF /* Photo.swift in Sources */,
 				6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */,
@@ -479,10 +465,8 @@
 				6CDD529F25371FF1003A9BDF /* UIView+Layer.swift in Sources */,
 				6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */,
 				6CDD529E25371FE8003A9BDF /* Navigator.swift in Sources */,
-				6CDD52A025371FF1003A9BDF /* UITableView+Cell.swift in Sources */,
 				6CDD529825371FE1003A9BDF /* RequestBuilder.swift in Sources */,
 				6CDD52B325372238003A9BDF /* PhotosController.swift in Sources */,
-				6CDD526825371F4D003A9BDF /* ContentView.swift in Sources */,
 				6CDD52B425372238003A9BDF /* PhotosViewModel.swift in Sources */,
 				6CDD52AD25372238003A9BDF /* Strings.swift in Sources */,
 				6CDD529B25371FE1003A9BDF /* Data+Codable.swift in Sources */,
@@ -644,10 +628,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"FlickerBrowser/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FlickerBrowser/Info.plist;
+				INFOPLIST_FILE = FlickerBrowser/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,10 +649,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"FlickerBrowser/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FlickerBrowser/Info.plist;
+				INFOPLIST_FILE = FlickerBrowser/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

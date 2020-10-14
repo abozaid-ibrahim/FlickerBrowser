@@ -12,15 +12,11 @@ struct PhotosResponse: Codable {
     let stat: String?
 }
 
-// MARK: - Photos
-
 struct Photos: Codable {
     let page, pages, perpage: Int?
     let total: String?
     let photo: [Photo]?
 }
-
-// MARK: - Photo
 
 struct Photo: Codable {
     let id: String
@@ -29,5 +25,4 @@ struct Photo: Codable {
     let server: String
     let farm: Int
     let title: String?
-    let ispublic, isfriend, isfamily: Int?
 }
