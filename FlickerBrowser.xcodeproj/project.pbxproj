@@ -14,6 +14,19 @@
 		6CDD526D25371F4E003A9BDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526C25371F4E003A9BDF /* Preview Assets.xcassets */; };
 		6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526E25371F4E003A9BDF /* LaunchScreen.storyboard */; };
 		6CDD527B25371F4E003A9BDF /* FlickerBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD527A25371F4E003A9BDF /* FlickerBrowserTests.swift */; };
+		6CDD529625371FE1003A9BDF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528725371FD4003A9BDF /* APIClient.swift */; };
+		6CDD529725371FE1003A9BDF /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528825371FD4003A9BDF /* APIConstants.swift */; };
+		6CDD529825371FE1003A9BDF /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528925371FD4003A9BDF /* RequestBuilder.swift */; };
+		6CDD529925371FE1003A9BDF /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528A25371FD4003A9BDF /* ImageDownloader.swift */; };
+		6CDD529A25371FE1003A9BDF /* Reachiblity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528B25371FD4003A9BDF /* Reachiblity.swift */; };
+		6CDD529B25371FE1003A9BDF /* Data+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528C25371FD4003A9BDF /* Data+Codable.swift */; };
+		6CDD529C25371FE1003A9BDF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528D25371FD4003A9BDF /* NetworkError.swift */; };
+		6CDD529D25371FE8003A9BDF /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD528F25371FD4003A9BDF /* Destination.swift */; };
+		6CDD529E25371FE8003A9BDF /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529025371FD4003A9BDF /* Navigator.swift */; };
+		6CDD529F25371FF1003A9BDF /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529225371FD4003A9BDF /* UIView+Layer.swift */; };
+		6CDD52A025371FF1003A9BDF /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */; };
+		6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */; };
+		6CDD52A225371FF1003A9BDF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529525371FD4003A9BDF /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +51,19 @@
 		6CDD527625371F4E003A9BDF /* FlickerBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD527A25371F4E003A9BDF /* FlickerBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerBrowserTests.swift; sourceTree = "<group>"; };
 		6CDD527C25371F4E003A9BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CDD528725371FD4003A9BDF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		6CDD528825371FD4003A9BDF /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		6CDD528925371FD4003A9BDF /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		6CDD528A25371FD4003A9BDF /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		6CDD528B25371FD4003A9BDF /* Reachiblity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachiblity.swift; sourceTree = "<group>"; };
+		6CDD528C25371FD4003A9BDF /* Data+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Codable.swift"; sourceTree = "<group>"; };
+		6CDD528D25371FD4003A9BDF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		6CDD528F25371FD4003A9BDF /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		6CDD529025371FD4003A9BDF /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		6CDD529225371FD4003A9BDF /* UIView+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layer.swift"; sourceTree = "<group>"; };
+		6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
+		6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
+		6CDD529525371FD4003A9BDF /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +105,7 @@
 		6CDD526225371F4D003A9BDF /* FlickerBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				6CDD528525371FD4003A9BDF /* Modules */,
 				6CDD526325371F4D003A9BDF /* AppDelegate.swift */,
 				6CDD526525371F4D003A9BDF /* SceneDelegate.swift */,
 				6CDD526725371F4D003A9BDF /* ContentView.swift */,
@@ -105,6 +132,50 @@
 				6CDD527C25371F4E003A9BDF /* Info.plist */,
 			);
 			path = FlickerBrowserTests;
+			sourceTree = "<group>";
+		};
+		6CDD528525371FD4003A9BDF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD528625371FD4003A9BDF /* Network */,
+				6CDD528E25371FD4003A9BDF /* Navigation */,
+				6CDD529125371FD4003A9BDF /* Extensions */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6CDD528625371FD4003A9BDF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD528725371FD4003A9BDF /* APIClient.swift */,
+				6CDD528825371FD4003A9BDF /* APIConstants.swift */,
+				6CDD528925371FD4003A9BDF /* RequestBuilder.swift */,
+				6CDD528A25371FD4003A9BDF /* ImageDownloader.swift */,
+				6CDD528B25371FD4003A9BDF /* Reachiblity.swift */,
+				6CDD528C25371FD4003A9BDF /* Data+Codable.swift */,
+				6CDD528D25371FD4003A9BDF /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6CDD528E25371FD4003A9BDF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD528F25371FD4003A9BDF /* Destination.swift */,
+				6CDD529025371FD4003A9BDF /* Navigator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		6CDD529125371FD4003A9BDF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD529225371FD4003A9BDF /* UIView+Layer.swift */,
+				6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */,
+				6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */,
+				6CDD529525371FD4003A9BDF /* Observable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +279,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDD52A225371FF1003A9BDF /* Observable.swift in Sources */,
 				6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */,
+				6CDD529725371FE1003A9BDF /* APIConstants.swift in Sources */,
+				6CDD529925371FE1003A9BDF /* ImageDownloader.swift in Sources */,
 				6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */,
+				6CDD529A25371FE1003A9BDF /* Reachiblity.swift in Sources */,
+				6CDD529F25371FF1003A9BDF /* UIView+Layer.swift in Sources */,
+				6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */,
+				6CDD529E25371FE8003A9BDF /* Navigator.swift in Sources */,
+				6CDD52A025371FF1003A9BDF /* UITableView+Cell.swift in Sources */,
+				6CDD529825371FE1003A9BDF /* RequestBuilder.swift in Sources */,
 				6CDD526825371F4D003A9BDF /* ContentView.swift in Sources */,
+				6CDD529B25371FE1003A9BDF /* Data+Codable.swift in Sources */,
+				6CDD529625371FE1003A9BDF /* APIClient.swift in Sources */,
+				6CDD529C25371FE1003A9BDF /* NetworkError.swift in Sources */,
+				6CDD529D25371FE8003A9BDF /* Destination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
