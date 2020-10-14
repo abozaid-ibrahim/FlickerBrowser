@@ -9,7 +9,7 @@
 import Foundation
 
 enum PhotosAPI {
-    case search(String)
+    case search(for: String, page: Int)
 }
 
 extension PhotosAPI: RequestBuilder {
@@ -34,13 +34,14 @@ extension PhotosAPI: RequestBuilder {
 
     var parameters: [String: Any] {
         switch self {
-        case let .search(text):
+        case let .search(text, page):
 
             return ["method": "flickr.photos.search",
                     "api_key": APIConstants.apiKey,
                     "format": "json",
                     "nojsoncallback": "1",
-                    "text": "\(text)"]
+                    "text": "\(text)",
+                    "page": page]
         }
     }
 

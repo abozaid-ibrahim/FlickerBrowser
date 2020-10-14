@@ -60,18 +60,20 @@ final class PhotosViewModel: PhotosViewModelType {
         }
         page.isFetchingData = true
         isDataLoading.onNext(true)
-        apiClient.getData(of: PhotosAPI.search("egypt")) { [weak self] result in
+        apiClient.getData(of: PhotosAPI.search(for: "egypt", page: page.currentPage)) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(data):
                 if let response: PhotosResponse? = data.parse() {
-                    self?.updateUI(with: response?.photos?.photo ?? [])
+                    self.updateUI(with: response?.photos?.photo ?? [])
+                    self.updatePage(with: self.sessionsList.count, response?.photos?.pages ?? 0)
                 } else {
-                    self?.error.onNext(NetworkError.failedToParseData.localizedDescription)
+                    self.error.onNext(NetworkError.failedToParseData.localizedDescription)
                 }
             case let .failure(error):
-                self?.error.onNext(error.localizedDescription)
+                self.error.onNext(error.localizedDescription)
             }
-            self?.isDataLoading.onNext(false)
+            self.isDataLoading.onNext(false)
         }
     }
 
@@ -90,13 +92,12 @@ private extension PhotosViewModel {
         isDataLoading.onNext(false)
         let startRange = sessionsList.count
         sessionsList.append(contentsOf: sessions)
-        if page.currentPage == 0 {
+        if page.isFirstPage {
             reloadFields.onNext(.all)
         } else {
             let rows = (startRange ... sessionsList.count - 1).map { IndexPath(row: $0, section: 0) }
             reloadFields.onNext(.insertIndexPaths(rows))
         }
-        updatePage(with: sessionsList.count)
     }
 
     func bindForSearch() {
@@ -106,7 +107,7 @@ private extension PhotosViewModel {
                 guard let self = self else { return }
                 self.isSearchingMode = true
                 self.isSearchLoading.onNext(true)
-                self.apiClient.getData(of: PhotosAPI.search(text)) { result in
+                self.apiClient.getData(of: PhotosAPI.search(for: text, page: 0)) { result in
                     switch result {
                     case let .success(data):
                         if let response: PhotosResponse? = data.parse() {
@@ -115,7 +116,7 @@ private extension PhotosViewModel {
                         } else {
                             self.error.onNext(NetworkError.failedToParseData.localizedDescription)
                         }
-                        
+
                     case let .failure(error):
                         self.error.onNext(error.localizedDescription)
                     }
@@ -125,9 +126,10 @@ private extension PhotosViewModel {
             }).disposed(by: disposeBag)
     }
 
-    func updatePage(with count: Int) {
+    func updatePage(with count: Int, _ totalPages: Int) {
         page.isFetchingData = false
         page.currentPage += 1
         page.fetchedItemsCount = count
+        page.maxPages = totalPages
     }
 }

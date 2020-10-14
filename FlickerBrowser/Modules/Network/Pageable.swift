@@ -9,12 +9,17 @@ import Foundation
 import Foundation
 
 final class Page {
-    var currentPage: Int = 0
+    var currentPage: Int = 1
+
     var maxPages: Int = 5
-    var countPerPage: Int = 10
+    var countPerPage: Int = 100
     var isFetchingData = false
     var fetchedItemsCount = 0
     var shouldLoadMore: Bool {
         (currentPage < maxPages) && (!isFetchingData)
+    }
+
+    var isFirstPage: Bool {
+        currentPage == 1
     }
 }
