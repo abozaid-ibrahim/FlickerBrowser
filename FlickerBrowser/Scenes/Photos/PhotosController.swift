@@ -58,7 +58,7 @@ private extension PhotosController {
             .asDriver(onErrorJustReturn: "")
             .drive(onNext: show(error:))
             .disposed(by: disposeBag)
-        viewModel.loadData(nil)
+        viewModel.loadData(for: .none)
     }
 
     func setupCollection() {

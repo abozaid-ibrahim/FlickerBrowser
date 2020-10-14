@@ -10,7 +10,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-enum CollectionReload {
+enum CollectionReload: Equatable {
     case all
     case insertIndexPaths([IndexPath])
 }
@@ -23,7 +23,7 @@ protocol PhotosViewModelType {
     var isSearchLoading: PublishSubject<Bool> { get }
     var reloadFields: PublishSubject<CollectionReload> { get }
     func searchCanceled()
-    func loadData(_ text: String?)
+    func loadData(for text: String?)
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath])
 }
 
@@ -49,7 +49,7 @@ final class PhotosViewModel: PhotosViewModelType {
         reloadFields.onNext(.all)
     }
 
-    func loadData(_ text: String? = nil) {
+    func loadData(for text: String? = nil) {
         guard page.shouldLoadMore else {
             return
         }
@@ -61,7 +61,7 @@ final class PhotosViewModel: PhotosViewModelType {
             case let .success(data):
                 if let response: PhotosResponse? = data.parse() {
                     self.updateUI(with: response?.photos?.photo ?? [])
-                    self.updatePage(with: self.dataList.count, response?.photos?.pages ?? 0)
+                    self.page.newPage(fetched: self.dataList.count, total: response?.photos?.pages ?? 0)
                 } else {
                     self.error.onNext(NetworkError.failedToParseData.localizedDescription)
                 }
@@ -101,21 +101,12 @@ private extension PhotosViewModel {
             .subscribe(onNext: { [weak self] text in
                 guard let self = self else { return }
                 self.reset()
-                self.loadData(text)
+                self.loadData(for: text)
             }).disposed(by: disposeBag)
     }
 
-    func updatePage(with count: Int, _ totalPages: Int) {
-        page.isFetchingData = false
-        page.currentPage += 1
-        page.fetchedItemsCount += count
-        page.maxPages = totalPages
-    }
-
     func reset() {
-        page.isFetchingData = false
-        page.currentPage = 1
-        page.fetchedItemsCount = 0
+        page.reset()
         dataList.removeAll()
         reloadFields.onNext(.all)
     }
