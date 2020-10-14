@@ -14,7 +14,7 @@ enum Destination {
     var controller: UIViewController {
         switch self {
         case .photos:
-            return AlbumsController(viewModel: AlbumsViewModel())
+            return PhotosController(viewModel: PhotosViewModel())
        
         }
     }

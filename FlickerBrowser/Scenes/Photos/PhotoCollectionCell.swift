@@ -1,14 +1,14 @@
 //
-//  AlbumCollectionCell.swift
-//  MusicPlayer
+//  PhotoCollectionCell.swift
+//  FlickerBrowser
 //
-//  Created by abuzeid on 07.08.20.
+//  Created by abuzeid on 14.10.20.
 //  Copyright © 2020 abuzeid. All rights reserved.
 //
 
 import UIKit
 
-final class AlbumCollectionCell: UICollectionViewCell {
+final class PhotoCollectionCell: UICollectionViewCell {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
 

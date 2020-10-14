@@ -1,8 +1,8 @@
 //
 //  Strings.swift
-//  MusicPlayer
+//  FlickerBrowser
 //
-//  Created by abuzeid on 08.08.20.
+//  Created by abuzeid on 14.10.20.
 //  Copyright © 2020 abuzeid. All rights reserved.
 //
 

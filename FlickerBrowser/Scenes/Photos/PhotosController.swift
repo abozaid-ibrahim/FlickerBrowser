@@ -1,8 +1,8 @@
 //
 //  CollectionViewController.swift
-//  MusicPlayer
+//  FlickerBrowser
 //
-//  Created by abuzeid on 07.08.20.
+//  Created by abuzeid on 14.10.20.
 //  Copyright © 2020 abuzeid. All rights reserved.
 //
 
@@ -10,12 +10,12 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-final class AlbumsController: UICollectionViewController {
-    private let viewModel: AlbumsViewModelType
+final class PhotosController: UICollectionViewController {
+    private let viewModel: PhotosViewModelType
     private let disposeBag = DisposeBag()
     private var albums: [Photo] { viewModel.dataList }
 
-    init(viewModel: AlbumsViewModelType) {
+    init(viewModel: PhotosViewModelType) {
         self.viewModel = viewModel
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -35,7 +35,7 @@ final class AlbumsController: UICollectionViewController {
 
 // MARK: - setup
 
-private extension AlbumsController {
+private extension PhotosController {
     
 
     func collection(reload: CollectionReload) {
@@ -65,7 +65,7 @@ private extension AlbumsController {
 
     func setupCollection() {
         title = Str.albumsTitle
-        collectionView.register(AlbumCollectionCell.self)
+        collectionView.register(PhotoCollectionCell.self)
         collectionView.register(ActivityIndicatorFooterView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: ActivityIndicatorFooterView.id)
@@ -90,7 +90,7 @@ private extension AlbumsController {
 
 // MARK: - UISearchResultsUpdating
 
-extension AlbumsController: UISearchResultsUpdating {
+extension PhotosController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard searchController.isActive else {
             viewModel.searchCanceled()
@@ -103,13 +103,13 @@ extension AlbumsController: UISearchResultsUpdating {
 
 // MARK: - UICollectionViewDataSource
 
-extension AlbumsController {
+extension PhotosController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return albums.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionCell.identifier, for: indexPath) as! AlbumCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.identifier, for: indexPath) as! PhotoCollectionCell
         cell.setData(with: albums[indexPath.row])
         return cell
     }
@@ -129,7 +129,7 @@ extension AlbumsController {
 
 // MARK: - UICollectionViewDataSourcePrefetching
 
-extension AlbumsController: UICollectionViewDataSourcePrefetching {
+extension PhotosController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         viewModel.prefetchItemsAt(prefetch: true, indexPaths: indexPaths)
     }

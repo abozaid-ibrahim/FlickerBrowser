@@ -1,8 +1,8 @@
 //
-//  AlbumsViewModel.swift
-//  MusicPlayer
+//  PhotosViewModel.swift
+//  FlickerBrowser
 //
-//  Created by abuzeid on 07.08.20.
+//  Created by abuzeid on 14.10.20.
 //  Copyright © 2020 abuzeid. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ enum CollectionReload {
     case insertIndexPaths([IndexPath])
 }
 
-protocol AlbumsViewModelType {
+protocol PhotosViewModelType {
     var dataList: [Photo] { get }
     var error: PublishSubject<String> { get }
     var searchFor: PublishSubject<String> { get }
@@ -26,7 +26,7 @@ protocol AlbumsViewModelType {
     func prefetchItemsAt(prefetch: Bool, indexPaths: [IndexPath])
 }
 
-final class AlbumsViewModel: AlbumsViewModelType {
+final class PhotosViewModel: PhotosViewModelType {
     let error = PublishSubject<String>()
     let searchFor = PublishSubject<String>()
     let isDataLoading = PublishSubject<Bool>()
@@ -97,7 +97,7 @@ final class AlbumsViewModel: AlbumsViewModelType {
 
 // MARK: private
 
-private extension AlbumsViewModel {
+private extension PhotosViewModel {
     func updateUI(with sessions: [Photo]) {
         isDataLoading.onNext(false)
         let startRange = sessionsList.count
