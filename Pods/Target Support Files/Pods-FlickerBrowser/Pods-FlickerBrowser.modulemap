@@ -1,0 +1,6 @@
+framework module Pods_FlickerBrowser {
+  umbrella header "Pods-FlickerBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

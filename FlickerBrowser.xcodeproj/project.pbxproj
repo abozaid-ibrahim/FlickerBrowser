@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,19 @@
 		6CDD52A025371FF1003A9BDF /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */; };
 		6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */; };
 		6CDD52A225371FF1003A9BDF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD529525371FD4003A9BDF /* Observable.swift */; };
+		6CDD52AD25372238003A9BDF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52A42537222D003A9BDF /* Strings.swift */; };
+		6CDD52AE25372238003A9BDF /* AlbumCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD52A52537222D003A9BDF /* AlbumCollectionCell.xib */; };
+		6CDD52AF25372238003A9BDF /* AlbumCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52A62537222D003A9BDF /* AlbumCollectionCell.swift */; };
+		6CDD52B125372238003A9BDF /* AlbumsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52A82537222D003A9BDF /* AlbumsApi.swift */; };
+		6CDD52B225372238003A9BDF /* ActivityIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52A92537222D003A9BDF /* ActivityIndicatorFooterView.swift */; };
+		6CDD52B325372238003A9BDF /* AlbumsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52AA2537222D003A9BDF /* AlbumsController.swift */; };
+		6CDD52B425372238003A9BDF /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52AB2537222D003A9BDF /* AlbumsViewModel.swift */; };
+		6CDD52B525372238003A9BDF /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52AC2537222D003A9BDF /* Albums.swift */; };
+		6CDD52B9253725BB003A9BDF /* UICollectionView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52B8253725BB003A9BDF /* UICollectionView+Cell.swift */; };
+		6CDD52BA253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52B7253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift */; };
+		6CDD52BC2537264A003A9BDF /* Pageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD52BB2537264A003A9BDF /* Pageable.swift */; };
+		7C10A70E1254FC83B583EBEF /* Pods_FlickerBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80AFFB6175438F939078A6C /* Pods_FlickerBrowser.framework */; };
+		821AA58F9BFDA14AF6141A25 /* Pods_FlickerBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF94023700EF968F387BE61 /* Pods_FlickerBrowserTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25D0F2414B0BF02E6E148802 /* Pods-FlickerBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowser.debug.xcconfig"; path = "Target Support Files/Pods-FlickerBrowser/Pods-FlickerBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		569536FF9D1BC7D16FE59BBA /* Pods-FlickerBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		6CDD526025371F4D003A9BDF /* FlickerBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD526325371F4D003A9BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDD526525371F4D003A9BDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +79,21 @@
 		6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		6CDD529525371FD4003A9BDF /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		6CDD52A42537222D003A9BDF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		6CDD52A52537222D003A9BDF /* AlbumCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionCell.xib; sourceTree = "<group>"; };
+		6CDD52A62537222D003A9BDF /* AlbumCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionCell.swift; sourceTree = "<group>"; };
+		6CDD52A82537222D003A9BDF /* AlbumsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsApi.swift; sourceTree = "<group>"; };
+		6CDD52A92537222D003A9BDF /* ActivityIndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorFooterView.swift; sourceTree = "<group>"; };
+		6CDD52AA2537222D003A9BDF /* AlbumsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsController.swift; sourceTree = "<group>"; };
+		6CDD52AB2537222D003A9BDF /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
+		6CDD52AC2537222D003A9BDF /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
+		6CDD52B7253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		6CDD52B8253725BB003A9BDF /* UICollectionView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Cell.swift"; sourceTree = "<group>"; };
+		6CDD52BB2537264A003A9BDF /* Pageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pageable.swift; sourceTree = "<group>"; };
+		8A1B364D7D90DAEABB454D49 /* Pods-FlickerBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowserTests.debug.xcconfig"; path = "Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CF94023700EF968F387BE61 /* Pods_FlickerBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEFBB0EBBEB03BB4F36BAD2A /* Pods-FlickerBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerBrowser.release.xcconfig"; path = "Target Support Files/Pods-FlickerBrowser/Pods-FlickerBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		E80AFFB6175438F939078A6C /* Pods_FlickerBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C10A70E1254FC83B583EBEF /* Pods_FlickerBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,18 +109,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821AA58F9BFDA14AF6141A25 /* Pods_FlickerBrowserTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0515C46EC7E0884BD47AAEF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25D0F2414B0BF02E6E148802 /* Pods-FlickerBrowser.debug.xcconfig */,
+				BEFBB0EBBEB03BB4F36BAD2A /* Pods-FlickerBrowser.release.xcconfig */,
+				8A1B364D7D90DAEABB454D49 /* Pods-FlickerBrowserTests.debug.xcconfig */,
+				569536FF9D1BC7D16FE59BBA /* Pods-FlickerBrowserTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1E2085A731D698F4A1B874BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E80AFFB6175438F939078A6C /* Pods_FlickerBrowser.framework */,
+				9CF94023700EF968F387BE61 /* Pods_FlickerBrowserTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6CDD525725371F4D003A9BDF = {
 			isa = PBXGroup;
 			children = (
 				6CDD526225371F4D003A9BDF /* FlickerBrowser */,
 				6CDD527925371F4E003A9BDF /* FlickerBrowserTests */,
 				6CDD526125371F4D003A9BDF /* Products */,
+				0515C46EC7E0884BD47AAEF7 /* Pods */,
+				1E2085A731D698F4A1B874BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +159,7 @@
 		6CDD526225371F4D003A9BDF /* FlickerBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				6CDD52B6253723F4003A9BDF /* Scenes */,
 				6CDD528525371FD4003A9BDF /* Modules */,
 				6CDD526325371F4D003A9BDF /* AppDelegate.swift */,
 				6CDD526525371F4D003A9BDF /* SceneDelegate.swift */,
@@ -147,6 +202,7 @@
 		6CDD528625371FD4003A9BDF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6CDD52BB2537264A003A9BDF /* Pageable.swift */,
 				6CDD528725371FD4003A9BDF /* APIClient.swift */,
 				6CDD528825371FD4003A9BDF /* APIConstants.swift */,
 				6CDD528925371FD4003A9BDF /* RequestBuilder.swift */,
@@ -170,12 +226,37 @@
 		6CDD529125371FD4003A9BDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6CDD52B8253725BB003A9BDF /* UICollectionView+Cell.swift */,
+				6CDD52B7253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift */,
 				6CDD529225371FD4003A9BDF /* UIView+Layer.swift */,
 				6CDD529325371FD4003A9BDF /* UITableView+Cell.swift */,
 				6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */,
 				6CDD529525371FD4003A9BDF /* Observable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6CDD52A32537222D003A9BDF /* albums */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD52A42537222D003A9BDF /* Strings.swift */,
+				6CDD52A52537222D003A9BDF /* AlbumCollectionCell.xib */,
+				6CDD52A62537222D003A9BDF /* AlbumCollectionCell.swift */,
+				6CDD52A82537222D003A9BDF /* AlbumsApi.swift */,
+				6CDD52A92537222D003A9BDF /* ActivityIndicatorFooterView.swift */,
+				6CDD52AA2537222D003A9BDF /* AlbumsController.swift */,
+				6CDD52AB2537222D003A9BDF /* AlbumsViewModel.swift */,
+				6CDD52AC2537222D003A9BDF /* Albums.swift */,
+			);
+			path = albums;
+			sourceTree = "<group>";
+		};
+		6CDD52B6253723F4003A9BDF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6CDD52A32537222D003A9BDF /* albums */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CDD527F25371F4E003A9BDF /* Build configuration list for PBXNativeTarget "FlickerBrowser" */;
 			buildPhases = (
+				254A8D95827FA9D98BC8BE0C /* [CP] Check Pods Manifest.lock */,
 				6CDD525C25371F4D003A9BDF /* Sources */,
 				6CDD525D25371F4D003A9BDF /* Frameworks */,
 				6CDD525E25371F4D003A9BDF /* Resources */,
+				DD8A97B11E25486C25059E23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,9 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CDD528225371F4E003A9BDF /* Build configuration list for PBXNativeTarget "FlickerBrowserTests" */;
 			buildPhases = (
+				5DCC9EAA044122BD191D1DC9 /* [CP] Check Pods Manifest.lock */,
 				6CDD527225371F4E003A9BDF /* Sources */,
 				6CDD527325371F4E003A9BDF /* Frameworks */,
 				6CDD527425371F4E003A9BDF /* Resources */,
+				9BCC4560D79D49CF18197017 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDD527025371F4E003A9BDF /* LaunchScreen.storyboard in Resources */,
+				6CDD52AE25372238003A9BDF /* AlbumCollectionCell.xib in Resources */,
 				6CDD526D25371F4E003A9BDF /* Preview Assets.xcassets in Resources */,
 				6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */,
 			);
@@ -274,27 +360,118 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		254A8D95827FA9D98BC8BE0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlickerBrowser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DCC9EAA044122BD191D1DC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlickerBrowserTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BCC4560D79D49CF18197017 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlickerBrowserTests/Pods-FlickerBrowserTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD8A97B11E25486C25059E23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlickerBrowser/Pods-FlickerBrowser-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlickerBrowser/Pods-FlickerBrowser-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlickerBrowser/Pods-FlickerBrowser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6CDD525C25371F4D003A9BDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDD52B125372238003A9BDF /* AlbumsApi.swift in Sources */,
 				6CDD52A225371FF1003A9BDF /* Observable.swift in Sources */,
+				6CDD52B225372238003A9BDF /* ActivityIndicatorFooterView.swift in Sources */,
+				6CDD52B525372238003A9BDF /* Albums.swift in Sources */,
 				6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */,
 				6CDD529725371FE1003A9BDF /* APIConstants.swift in Sources */,
+				6CDD52B9253725BB003A9BDF /* UICollectionView+Cell.swift in Sources */,
 				6CDD529925371FE1003A9BDF /* ImageDownloader.swift in Sources */,
 				6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */,
 				6CDD529A25371FE1003A9BDF /* Reachiblity.swift in Sources */,
+				6CDD52BA253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift in Sources */,
 				6CDD529F25371FF1003A9BDF /* UIView+Layer.swift in Sources */,
 				6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */,
 				6CDD529E25371FE8003A9BDF /* Navigator.swift in Sources */,
 				6CDD52A025371FF1003A9BDF /* UITableView+Cell.swift in Sources */,
 				6CDD529825371FE1003A9BDF /* RequestBuilder.swift in Sources */,
+				6CDD52B325372238003A9BDF /* AlbumsController.swift in Sources */,
 				6CDD526825371F4D003A9BDF /* ContentView.swift in Sources */,
+				6CDD52B425372238003A9BDF /* AlbumsViewModel.swift in Sources */,
+				6CDD52AD25372238003A9BDF /* Strings.swift in Sources */,
 				6CDD529B25371FE1003A9BDF /* Data+Codable.swift in Sources */,
 				6CDD529625371FE1003A9BDF /* APIClient.swift in Sources */,
 				6CDD529C25371FE1003A9BDF /* NetworkError.swift in Sources */,
 				6CDD529D25371FE8003A9BDF /* Destination.swift in Sources */,
+				6CDD52BC2537264A003A9BDF /* Pageable.swift in Sources */,
+				6CDD52AF25372238003A9BDF /* AlbumCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +621,7 @@
 		};
 		6CDD528025371F4E003A9BDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D0F2414B0BF02E6E148802 /* Pods-FlickerBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +642,7 @@
 		};
 		6CDD528125371F4E003A9BDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEFBB0EBBEB03BB4F36BAD2A /* Pods-FlickerBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +663,7 @@
 		};
 		6CDD528325371F4E003A9BDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A1B364D7D90DAEABB454D49 /* Pods-FlickerBrowserTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +686,7 @@
 		};
 		6CDD528425371F4E003A9BDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569536FF9D1BC7D16FE59BBA /* Pods-FlickerBrowserTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

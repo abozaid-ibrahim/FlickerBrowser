@@ -7,5 +7,7 @@
 
 import Foundation
 struct APIConstants {
-    static let baseURL = "https://5f6b173201d6570016d0410a.mockapi.io/api/"
+    static let baseURL = "https://api.flickr.com/services/rest/"
+    static let apiKey = "e37adece6eb0fc58b8a560b2a433fa41"
+    static let secretKey = "8899bae1444e8324"
 }
