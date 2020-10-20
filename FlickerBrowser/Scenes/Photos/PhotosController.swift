@@ -72,7 +72,9 @@ private extension PhotosController {
     }
 
     func setupSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
+        let searchResults = SearchResultsController()
+//        searchResul
+        let searchController = UISearchController(searchResultsController: searchResults)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = Str.search
