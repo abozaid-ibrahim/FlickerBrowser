@@ -7,10 +7,14 @@
 //
 
 import Foundation
-protocol SearchRepo {
+protocol SearchRepositoryType {
+    func insert(search: String)
+    func getAll() -> [String]
+    func getAll(start with: String) -> [String]
+    func clear()
 }
 
-final class SearchRepository: SearchRepo {
+final class SearchRepository: SearchRepositoryType {
     func insert(search: String) {
         var cach = getAll()
         if cach.contains(search) {
