@@ -14,9 +14,16 @@ final class PhotosController: UICollectionViewController {
     private let viewModel: PhotosViewModelType
     private let disposeBag = DisposeBag()
     private var albums: [Photo] { viewModel.dataList }
+    private let resultsController = SearchResultsController()
 
     init(viewModel: PhotosViewModelType) {
         self.viewModel = viewModel
+        self.viewModel.loadPreviousSearches
+            .bind(to: resultsController.viewModel.getItemsBeginsWith)
+            .disposed(by: disposeBag)
+        viewModel.searchFor
+            .bind(to: resultsController.viewModel.saveNewSearchItem)
+            .disposed(by: disposeBag)
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
 
@@ -58,6 +65,11 @@ private extension PhotosController {
             .asDriver(onErrorJustReturn: "")
             .drive(onNext: show(error:))
             .disposed(by: disposeBag)
+        viewModel.searchFor
+            .asDriver(onErrorJustReturn: "")
+            .drive(onNext: { [weak self] _ in self?.resultsController.dismiss(animated: true, completion: nil) })
+            .disposed(by: disposeBag)
+
         viewModel.loadData(for: .none)
     }
 
@@ -72,10 +84,10 @@ private extension PhotosController {
     }
 
     func setupSearchBar() {
-        let searchResults = SearchResultsController()
-//        searchResul
-        let searchController = UISearchController(searchResultsController: searchResults)
+        resultsController.viewModel.onSelectedItem.bind(to: viewModel.searchFor).disposed(by: disposeBag)
+        let searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = Str.search
         viewModel.isSearchLoading
@@ -90,14 +102,18 @@ private extension PhotosController {
 
 // MARK: - UISearchResultsUpdating
 
-extension PhotosController: UISearchResultsUpdating {
+extension PhotosController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard searchController.isActive else {
             viewModel.searchCanceled()
             return
         }
         guard let text = searchController.searchBar.text else { return }
-        viewModel.searchFor.onNext(text)
+        viewModel.loadPreviousSearches.onNext(text)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchFor.onNext(searchBar.text ?? "")
     }
 }
 

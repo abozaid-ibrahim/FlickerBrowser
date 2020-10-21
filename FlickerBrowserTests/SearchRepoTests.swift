@@ -10,6 +10,8 @@
 import XCTest
 
 final class SearchRepoTests: XCTestCase {
+    // Warning, runnniing this test case clear the cach,
+    // we should inject the key to test it properly.
     func testAddDeleteSearchItems() throws {
         let repo = SearchRepository()
         repo.clear()
@@ -21,5 +23,7 @@ final class SearchRepoTests: XCTestCase {
         repo.insert(search: "Ha")
         XCTAssertEqual(repo.getAll(start: "He").first, "He")
         XCTAssertEqual(repo.getAll(start: "He").count, 2)
+        repo.clear()
+        XCTAssertTrue(repo.getAll().isEmpty)
     }
 }

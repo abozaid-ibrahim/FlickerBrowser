@@ -6,45 +6,42 @@
 //  Copyright © 2020 abuzeid. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 
-final class SearchResultsController: UIViewController, UITableViewDataSource {
-    private var tableView = SelfSizedTableView()
+final class SearchResultsController: UITableViewController {
+    let viewModel = SearchResultsViewModel()
+    private let disposeBag = DisposeBag()
+    private var items: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
-        tableView.setConstrainsEqualToParentEdges()
-        tableView.dataSource = self
+        view.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .clear
+        tableView.register(SearchResultTableCell.self)
+        viewModel.searchItems.asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] items in
+                self?.items = items
+                self?.tableView.reloadData()
+            }).disposed(by: disposeBag)
     }
-
-    // MARK: - Table view data source
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell() // tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        // Configure the cell...
-        cell.textLabel?.text = "Helo"
-        return cell
-    }
-   
 }
 
-final class SelfSizedTableView: UITableView {
-    var maxHeight: CGFloat = UIScreen.main.bounds.size.height-100
+// MARK: - Table view data source
 
-    override func reloadData() {
-        super.reloadData()
-        invalidateIntrinsicContentSize()
-        layoutIfNeeded()
+extension SearchResultsController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
     }
 
-    override var intrinsicContentSize: CGSize {
-        let height = min(contentSize.height, maxHeight)
-        return CGSize(width: contentSize.width, height: height)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableCell", for: indexPath) as! SearchResultTableCell
+        cell.set(title: items[indexPath.row])
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.onSelectedItem.onNext(items[indexPath.row])
     }
 }

@@ -19,6 +19,7 @@ protocol PhotosViewModelType {
     var dataList: [Photo] { get }
     var error: PublishSubject<String> { get }
     var searchFor: PublishSubject<String> { get }
+    var loadPreviousSearches: PublishSubject<String> { get }
     var isDataLoading: PublishSubject<Bool> { get }
     var isSearchLoading: PublishSubject<Bool> { get }
     var reloadFields: PublishSubject<CollectionReload> { get }
@@ -32,6 +33,7 @@ final class PhotosViewModel: PhotosViewModelType {
     let searchFor = PublishSubject<String>()
     let isDataLoading = PublishSubject<Bool>()
     let isSearchLoading = PublishSubject<Bool>()
+    let loadPreviousSearches = PublishSubject<String>()
     private let disposeBag = DisposeBag()
     private let apiClient: ApiClient
     private var page = Page()
@@ -99,13 +101,15 @@ private extension PhotosViewModel {
     }
 
     func bindForSearch() {
-        searchFor.distinctUntilChanged()
-            .debounce(.milliseconds(300), scheduler: SharingScheduler.make())
+        let shared = searchFor.distinctUntilChanged()
+            .share()
+        shared.debounce(.milliseconds(300), scheduler: SharingScheduler.make())
             .subscribe(onNext: { [weak self] text in
                 guard let self = self else { return }
                 self.reset()
                 self.loadData(for: text)
             }).disposed(by: disposeBag)
+        /// viewmodel bind to shared.
     }
 
     func reset() {

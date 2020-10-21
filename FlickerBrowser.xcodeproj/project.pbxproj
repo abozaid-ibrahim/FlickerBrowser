@@ -14,6 +14,10 @@
 		6C57FE44253F33CC0092CC44 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C57FE43253F33CC0092CC44 /* SearchRepository.swift */; };
 		6C7760EE253F3AB9009AEADD /* UIView+Constrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7760ED253F3AB9009AEADD /* UIView+Constrains.swift */; };
 		6C7760F0253F3FBA009AEADD /* SearchRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7760EF253F3FBA009AEADD /* SearchRepoTests.swift */; };
+		6C7760F2253F4575009AEADD /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7760F1253F4575009AEADD /* SearchResultsViewModel.swift */; };
+		6C7760F5253FB280009AEADD /* SearchResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7760F3253FB280009AEADD /* SearchResultTableCell.swift */; };
+		6C7760F6253FB280009AEADD /* SearchResultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7760F4253FB280009AEADD /* SearchResultTableCell.xib */; };
+		6C7760F8253FB349009AEADD /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7760F7253FB349009AEADD /* UITableView+Cell.swift */; };
 		6CDD526425371F4D003A9BDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526325371F4D003A9BDF /* AppDelegate.swift */; };
 		6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD526525371F4D003A9BDF /* SceneDelegate.swift */; };
 		6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CDD526925371F4E003A9BDF /* Assets.xcassets */; };
@@ -65,6 +69,10 @@
 		6C57FE43253F33CC0092CC44 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		6C7760ED253F3AB9009AEADD /* UIView+Constrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constrains.swift"; sourceTree = "<group>"; };
 		6C7760EF253F3FBA009AEADD /* SearchRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoTests.swift; sourceTree = "<group>"; };
+		6C7760F1253F4575009AEADD /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		6C7760F3253FB280009AEADD /* SearchResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableCell.swift; sourceTree = "<group>"; };
+		6C7760F4253FB280009AEADD /* SearchResultTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableCell.xib; sourceTree = "<group>"; };
+		6C7760F7253FB349009AEADD /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		6CDD526025371F4D003A9BDF /* FlickerBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDD526325371F4D003A9BDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDD526525371F4D003A9BDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +177,9 @@
 			children = (
 				6C57FE40253F32700092CC44 /* SearchResultsController.swift */,
 				6C57FE43253F33CC0092CC44 /* SearchRepository.swift */,
+				6C7760F1253F4575009AEADD /* SearchResultsViewModel.swift */,
+				6C7760F3253FB280009AEADD /* SearchResultTableCell.swift */,
+				6C7760F4253FB280009AEADD /* SearchResultTableCell.xib */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -208,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				6CDD527A25371F4E003A9BDF /* PhotosViewModelTests.swift */,
-				6CDD527C25371F4E003A9BDF /* Info.plist */,
 				6C7760EF253F3FBA009AEADD /* SearchRepoTests.swift */,
+				6CDD527C25371F4E003A9BDF /* Info.plist */,
 			);
 			path = FlickerBrowserTests;
 			sourceTree = "<group>";
@@ -256,6 +267,7 @@
 				6CDD529225371FD4003A9BDF /* UIView+Layer.swift */,
 				6CDD529425371FD4003A9BDF /* UIViewController+Error.swift */,
 				6C7760ED253F3AB9009AEADD /* UIView+Constrains.swift */,
+				6C7760F7253FB349009AEADD /* UITableView+Cell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -375,6 +387,7 @@
 				6C443A3525379E10009FF10E /* connectivity.png in Resources */,
 				6CDD52AE25372238003A9BDF /* PhotoCollectionCell.xib in Resources */,
 				6C443A302537961C009FF10E /* README.md in Resources */,
+				6C7760F6253FB280009AEADD /* SearchResultTableCell.xib in Resources */,
 				6CDD526A25371F4E003A9BDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,11 +516,13 @@
 				6CDD529925371FE1003A9BDF /* ImageDownloader.swift in Sources */,
 				6CDD526625371F4D003A9BDF /* SceneDelegate.swift in Sources */,
 				6CDD529A25371FE1003A9BDF /* Reachiblity.swift in Sources */,
+				6C7760F2253F4575009AEADD /* SearchResultsViewModel.swift in Sources */,
 				6CDD52BA253725BB003A9BDF /* UISearchBar+ActivityIndicator.swift in Sources */,
 				6CDD529F25371FF1003A9BDF /* UIView+Layer.swift in Sources */,
 				6CDD52A125371FF1003A9BDF /* UIViewController+Error.swift in Sources */,
 				6C7760EE253F3AB9009AEADD /* UIView+Constrains.swift in Sources */,
 				6CDD529E25371FE8003A9BDF /* Navigator.swift in Sources */,
+				6C7760F8253FB349009AEADD /* UITableView+Cell.swift in Sources */,
 				6CDD529825371FE1003A9BDF /* RequestBuilder.swift in Sources */,
 				6CDD52B325372238003A9BDF /* PhotosController.swift in Sources */,
 				6CDD52B425372238003A9BDF /* PhotosViewModel.swift in Sources */,
@@ -518,6 +533,7 @@
 				6CDD529D25371FE8003A9BDF /* Destination.swift in Sources */,
 				6CDD52BC2537264A003A9BDF /* Pageable.swift in Sources */,
 				6CDD52AF25372238003A9BDF /* PhotoCollectionCell.swift in Sources */,
+				6C7760F5253FB280009AEADD /* SearchResultTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
