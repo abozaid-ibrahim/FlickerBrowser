@@ -53,17 +53,17 @@ private extension PhotosController {
     func bindToViewModel() {
         viewModel.reloadFields
             .asDriver(onErrorJustReturn: .all)
-            .drive(onNext: collection(reload:))
+            .drive(onNext: { [unowned self] in self.collection(reload: $0) })
             .disposed(by: disposeBag)
         viewModel.isDataLoading
             .map { $0 ? CGFloat(50) : CGFloat(0) }
             .asDriver(onErrorJustReturn: 0)
-            .drive(onNext: collectionView.updateFooterHeight(height:))
+            .drive(onNext: { [unowned self] in self.collectionView.updateFooterHeight(height: $0) })
             .disposed(by: disposeBag)
 
         viewModel.error
             .asDriver(onErrorJustReturn: "")
-            .drive(onNext: show(error:))
+            .drive(onNext: { [unowned self] in self.show(error: $0) })
             .disposed(by: disposeBag)
         viewModel.searchFor
             .asDriver(onErrorJustReturn: "")

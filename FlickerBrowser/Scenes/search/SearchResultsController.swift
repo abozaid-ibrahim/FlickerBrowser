@@ -12,19 +12,24 @@ import UIKit
 final class SearchResultsController: UITableViewController {
     let viewModel = SearchResultsViewModel()
     private let disposeBag = DisposeBag()
-    private var items: [String] = []
+    private var items: [String] { return viewModel.dataList }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTable()
+        viewModel.reloadFields
+            .asDriver(onErrorJustReturn: .all)
+            .drive(onNext: { [unowned self] _ in self.tableView.reloadData() })
+            .disposed(by: disposeBag)
+    }
+
+    private func setupTable() {
         view.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .clear
         view.backgroundColor = .clear
+        tableView.alwaysBounceVertical = false
         tableView.register(SearchResultTableCell.self)
-        viewModel.searchItems.asDriver(onErrorJustReturn: [])
-            .drive(onNext: { [weak self] items in
-                self?.items = items
-                self?.tableView.reloadData()
-            }).disposed(by: disposeBag)
     }
 }
 
@@ -36,7 +41,7 @@ extension SearchResultsController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableCell", for: indexPath) as! SearchResultTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableCell.identifier, for: indexPath) as! SearchResultTableCell
         cell.set(title: items[indexPath.row])
         return cell
     }

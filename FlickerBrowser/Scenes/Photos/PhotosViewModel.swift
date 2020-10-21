@@ -46,7 +46,7 @@ final class PhotosViewModel: PhotosViewModelType {
         bindForSearch()
     }
 
-    var dataList: [Photo] = []
+    private(set) var dataList: [Photo] = []
 
     func searchCanceled() {
         reloadFields.onNext(.all)
@@ -101,15 +101,12 @@ private extension PhotosViewModel {
     }
 
     func bindForSearch() {
-        let shared = searchFor.distinctUntilChanged()
-            .share()
-        shared.debounce(.milliseconds(300), scheduler: SharingScheduler.make())
+        searchFor.distinctUntilChanged()
             .subscribe(onNext: { [weak self] text in
                 guard let self = self else { return }
                 self.reset()
                 self.loadData(for: text)
             }).disposed(by: disposeBag)
-        /// viewmodel bind to shared.
     }
 
     func reset() {

@@ -53,8 +53,8 @@ final class FlickerBrowserTests: XCTestCase {
             let thirdPage = [6, 7, 8].map { IndexPath(row: $0, section: 0) }
             schedular.start()
 
-            XCTAssertEqual(reloadObserver.events, [.next(300, .all),
-                                                   .next(300, .all),
+            XCTAssertEqual(reloadObserver.events, [.next(0, .all),
+                                                   .next(0, .all),
                                                    .next(400, .insertIndexPaths(secondPage)),
                                                    .next(500, .insertIndexPaths(thirdPage))])
         }
